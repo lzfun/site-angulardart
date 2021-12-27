@@ -1,16 +1,17 @@
 source "http://rubygems.org"
-gem 'bootstrap-sass', '~> 3.4.1' # Use 'bootstrap' for v4
+gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 # Jekyll-assets isn't yet compatible with Jekyll 4. Pin jekyll version.
 # https://github.com/envygeeks/jekyll-assets/issues/613
-gem 'jekyll', '~> 3'
-gem 'jekyll-assets', '~> 3', group: :jekyll_plugins
+gem 'jekyll'
+gem 'jekyll-assets', group: :jekyll_plugins
 gem 'jekyll-toc'
 gem 'kramdown'
 gem 'kramdown-parser-gfm'
 gem 'liquid-tag-parser'
 gem 'nokogiri'
 gem 'sassc'
+gem 'jekyll-postcss'
 gem "sprockets", "~> 3.7"
 # Sprockets > 4.0.beta8 breaks jekyll-assets
 # https://github.com/envygeeks/jekyll-assets/issues/589
