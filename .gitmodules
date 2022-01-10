@@ -1,10 +1,25 @@
 [submodule "site-shared"]
-  path = site-shared
-  url = https://github.com/dart-lang/site-shared.git
-  branch = master
+	path = site-shared
+	url = https://github.com/dart-lang/site-shared.git
+	branch = master
 	shallow = true
 [submodule "angular"]
-  path = site-angular
-  url = https://github.com/dart-lang/angular.git
-  branch = master
+	path = site-angular
+	url = https://github.com/dart-lang/angular.git
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/quickstart"]
+	path = examples/ng/doc/quickstart
+	url = https://github.com/angulardart-community/quickstart.git
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/toh-0"]
+	path = examples/ng/doc/toh-0
+	url = https://github.com/angulardart-community/toh-0
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/toh-1"]
+	path = examples/ng/doc/toh-1
+	url = https://github.com/angulardart-community/toh-1
+	branch = master
 	shallow = true
