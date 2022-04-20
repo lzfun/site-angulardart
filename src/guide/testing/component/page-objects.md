@@ -38,12 +38,13 @@ Add the package to the pubspec dependencies:
 ```diff
 --- toh-0/pubspec.yaml
 +++ toh-1/pubspec.yaml
-@@ -11,6 +12 @@
+@@ -11,6 +12,5 @@
  dev_dependencies:
--  angular_test: ^4.0.1
+   angular_test: ^4.0.1
 -  build_runner: ^2.1.7
--  build_test: ^2.1.5
--  build_web_compilers: ^3.2.2
++  build_runner: ^2.1.8
+   build_test: ^2.1.5
+   build_web_compilers: ^3.2.2
 -  test: ^1.20.1
 ```
 
@@ -55,7 +56,7 @@ Include these imports at the top of your page object file:
 ```
   import 'dart:async';
 
-  import 'package:pageloader/pageloader.dart';
+  import 'package:ngpageloader/pageloader.dart';
 ```
 
 Update the imports at the top of your test file:
@@ -68,7 +69,7 @@ Update the imports at the top of your test file:
  import 'package:angular_test/angular_test.dart';
  import 'package:angular_tour_of_heroes/app_component.dart';
  import 'package:angular_tour_of_heroes/app_component.template.dart' as ng;
-+import 'package:pageloader/html.dart';
++import 'package:ngpageloader/html.dart';
  import 'package:test/test.dart';
 
 +import 'app_po.dart';
@@ -191,8 +192,7 @@ objects are shared across tests, they are generally initialized during setup:
 
 <?code-excerpt "toh-1/test/app_test.dart (appPO setup)" title replace="/(final context |appPO |HtmlPageLoaderElement\.).*/[!$&!]/g"?>
 ```
-  final testBed =
-      NgTestBed.forComponent<AppComponent>(ng.AppComponentNgFactory);
+  final testBed = NgTestBed<AppComponent>(ng.AppComponentNgFactory);
   NgTestFixture<AppComponent> fixture;
   AppPO appPO;
 
@@ -262,11 +262,12 @@ The app from [part 2][toh-pt2] of the [tutorial][] displays a list of heros, gen
   <h2>Heroes</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroes"
-        [class.selected]="hero === selected"
+        [class.selected]="hero == selected"
         (click)="onSelect(hero)">
       <span class="badge">{!{hero.id}!}</span> {!{hero.name}!}
     </li>
   </ul>
+    <h2>{!{selected!.name}!}</h2>
 ```
 
 To define a PO field that collects all generated `<li>` elements, use the annotations introduced [earlier](#po-annotations), but declare the field to be of type `List<PageLoaderElement>`:
@@ -290,7 +291,7 @@ You might render hero data (as a map) from the text of the `<li>` elements like 
   // ···
   Map<String, dynamic> _heroDataFromLi(String liText) {
     final matches = RegExp((r'^(\d+) (.*)$')).firstMatch(liText);
-    return _heroData(matches[1], matches[2]);
+    return _heroData(matches?[1], matches?[2]);
   }
 ```
 
@@ -301,11 +302,11 @@ Only once a hero is selected from the [Heroes List][toh-pt2], are the selected h
 <?code-excerpt "toh-2/lib/app_component.html" remove="/h1|[Hh]ero|li|ul\x3E/" title?>
 ```
   <div *ngIf="selected != null">
-    <h2>{!{selected.name}!}</h2>
-    <div><label>id: </label>{!{selected.id}!}</div>
+    <h2>{!{selected!.name}!}</h2>
+    <div><label>id: </label>{!{selected!.id}!}</div>
     <div>
       <label>name: </label>
-      <input [(ngModel)]="selected.name" placeholder="name">
+      <input [(ngModel)]="selected!.name" placeholder="name">
     </div>
   </div>
 ```
@@ -323,7 +324,7 @@ To determine whether an optionally displayed page element is present, test its
 
 <?code-excerpt "toh-2/test/app_po.dart (heroFromDetails)" title replace="/\w+\.exists/[!$&!]/g"?>
 ```
-  Map get heroFromDetails {
+  Map<String, dynamic>? get heroFromDetails {
     if (![!_heroDetailId.exists!]) return null;
     // ···
   }
@@ -354,7 +355,7 @@ setup method, which selects the hero and gets a new PO.
 
 <?code-excerpt "toh-2/test/app_test.dart (show hero details)" title?>
 ```
-  const targetHero = {'id': 16, 'name': 'RubberMan'};
+  const Map<String, dynamic> targetHero = {'id': 16, 'name': 'RubberMan'};
 
   setUp(() async {
     await appPO.selectHero(5);

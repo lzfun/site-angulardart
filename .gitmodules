@@ -23,3 +23,83 @@
 	url = https://github.com/angulardart-community/toh-1
 	branch = master
 	shallow = true
+[submodule "examples/ng/doc/toh-2"]
+	path = examples/ng/doc/toh-2
+	url = https://github.com/angulardart-community/toh-2
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/toh-3"]
+	path = examples/ng/doc/toh-3
+	url = https://github.com/angulardart-community/toh-3
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/toh-4"]
+	path = examples/ng/doc/toh-4
+	url = https://github.com/angulardart-community/toh-4
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/toh-5"]
+	path = examples/ng/doc/toh-5
+	url = https://github.com/angulardart-community/toh-5
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/toh-6"]
+	path = examples/ng/doc/toh-6
+	url = https://github.com/angulardart-community/toh-6
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/architecture"]
+	path = examples/ng/doc/architecture
+	url = https://github.com/angulardart-community/architecture
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/attribute-directives"]
+	path = examples/ng/doc/attribute-directives
+	url = https://github.com/angulardart-community/attribute-directives
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/component-styles"]
+	path = examples/ng/doc/component-styles
+	url = https://github.com/angulardart-community/component-styles
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/dependency-injection"]
+	path = examples/ng/doc/dependency-injection
+	url = https://github.com/angulardart-community/dependency-injection
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/displaying-data"]
+	path = examples/ng/doc/displaying-data
+	url = https://github.com/angulardart-community/displaying-data
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/forms"]
+	path = examples/ng/doc/forms
+	url = https://github.com/angulardart-community/forms
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/hierarchical-dependency-injection"]
+	path = examples/ng/doc/hierarchical-dependency-injection
+	url = https://github.com/angulardart-community/hierarchical-dependency-injection
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/pipes"]
+	path = examples/ng/doc/pipes
+	url = https://github.com/angulardart-community/pipes
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/router"]
+	path = examples/ng/doc/router
+	url = https://github.com/angulardart-community/router
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/security"]
+	path = examples/ng/doc/security
+	url = https://github.com/angulardart-community/security
+	branch = master
+	shallow = true
+[submodule "examples/ng/doc/server-communication"]
+	path = examples/ng/doc/server-communication
+	url = https://github.com/angulardart-community/server-communication
+	branch = master
+	shallow = true
